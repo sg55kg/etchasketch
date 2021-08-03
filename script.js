@@ -3,7 +3,18 @@ const sixteen = document.getElementById('sixteen');
 const thirtyTwo = document.getElementById('thirtytwo');
 const sixtyFour = document.getElementById('sixtyfour');
 const drawpad = document.getElementById('drawpad');
+const picker = document.getElementById('picker');
 
+let defaultColor = '#000000';
+let currentColor = defaultColor;
+
+function setColor(newColor) {
+    currentColor = newColor;
+}
+
+function changeColor(e) {
+    e.target.style.backgroundColor = currentColor;
+}
 //start the page with a default grid
 createGrid(16);
 
@@ -28,6 +39,8 @@ sixtyFour.addEventListener('click', function() {
     clearGrid();
     createGrid(64);
 })
+//right now this does not change currentColor
+picker.addEventListener('change', setColor(e.target.value));
 
 //makes a new grid with items being cells/rows
 function createGrid(items) {
@@ -36,13 +49,7 @@ function createGrid(items) {
 
     for(let i = 0; i < (items * items); i++) {
         let cell = document.createElement('div');
-
-        cell.addEventListener('mouseover', function() {
-            //probably add if statement and add options for other colors
-            //need to add the buttons for these before then
-            cell.style.backgroundColor = 'black';
-        })
-
+        cell.addEventListener('mouseover', changeColor);
         drawpad.appendChild(cell).className = 'cell';
     }
     
