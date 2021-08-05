@@ -5,11 +5,12 @@ const sixtyFour = document.getElementById('sixtyfour');
 const drawpad = document.getElementById('drawpad');
 const picker = document.getElementById('picker');
 
-let defaultColor = '#000000';
-let currentColor = defaultColor;
+//let defaultColor = '#000000';
+let currentColor = 'black'
 
 function setColor(newColor) {
     currentColor = newColor;
+    return;
 }
 
 function changeColor(e) {
@@ -21,9 +22,7 @@ createGrid(16);
 /*
 When the specific button is clicked:
 Clear the grid of all cell elements, then call create grid again to replace
-the removed one. Could not figure out how to clear/rest the grid for a day 
-& any time these were clicked, a new grid was added to the old one. Also
-didn't set max width/height properly so 32/32 and 64/64 spilled over.
+the removed one.
 */
 sixteen.addEventListener('click', function() {
     clearGrid();
@@ -39,6 +38,7 @@ sixtyFour.addEventListener('click', function() {
     clearGrid();
     createGrid(64);
 })
+
 //right now this does not change currentColor
 picker.addEventListener('change', setColor(e.target.value));
 
@@ -52,7 +52,6 @@ function createGrid(items) {
         cell.addEventListener('mouseover', changeColor);
         drawpad.appendChild(cell).className = 'cell';
     }
-    
 }
 
 //only called when a button is clicked to remove the old grid so new grids
