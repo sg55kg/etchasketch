@@ -5,25 +5,28 @@ const sixtyFour = document.getElementById('sixtyfour');
 const drawpad = document.getElementById('drawpad');
 const picker = document.getElementById('picker');
 
-//let defaultColor = '#000000';
-let currentColor = 'black'
 
-function setColor(newColor) {
-    currentColor = newColor;
-    return;
+let currentColor = 'black';
+
+
+function colorPicker(event) {
+    picker.addEventListener('change', () => {
+        currentColor = event.target.value;
+    });
 }
 
-function changeColor(e) {
-    e.target.style.backgroundColor = currentColor;
+function changeColor() {
+    let cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => 
+    cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = currentColor;
+    }));
+   
 }
 //start the page with a default grid
 createGrid(16);
 
-/*
-When the specific button is clicked:
-Clear the grid of all cell elements, then call create grid again to replace
-the removed one.
-*/
+
 sixteen.addEventListener('click', function() {
     clearGrid();
     createGrid(16);
@@ -39,9 +42,6 @@ sixtyFour.addEventListener('click', function() {
     createGrid(64);
 })
 
-//right now this does not change currentColor
-picker.addEventListener('change', setColor(e.target.value));
-
 //makes a new grid with items being cells/rows
 function createGrid(items) {
     drawpad.style.setProperty('--grid-rows', items);
@@ -49,7 +49,7 @@ function createGrid(items) {
 
     for(let i = 0; i < (items * items); i++) {
         let cell = document.createElement('div');
-        cell.addEventListener('mouseover', changeColor);
+        cell.addEventListener('mouseover', changeColor); //potentially move this to a global variable
         drawpad.appendChild(cell).className = 'cell';
     }
 }
