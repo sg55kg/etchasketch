@@ -1,6 +1,9 @@
 # etchasketch
 The Odin Project etchasketch assignment.
 
+Updated(8/19):
+Got the color picker working finally. I had the right idea with the functions I had attempted, but I just needed to slightly change how I wrote them. After I fixed this I messed around in CSS to get the page looking nicer. I might still want to add some things and potentially add a rainbow color feature, but for now I think this is good enough to submit as a completed project on Odin.
+
 Updated(8/11):
 A day or two after my last update I got the actual grid creation and drawing functions finished. The last thing I am stuck on is making the color picker work, and then I plan on doing a little bit of final styling to make the page look a little nicer.
 
