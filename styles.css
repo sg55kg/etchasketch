@@ -1,10 +1,16 @@
 #header {
-    text-align: center;
+    text-align: left;
     max-width: 100%;
     height: auto;
-    padding-left: 200px;
+    padding-left: 45px;
     font-family: 'Roboto Mono', monospace;
-    color: white;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    margin: 15px 0px;
+    text-shadow: rgba(244, 248, 16, 0.589) 0px 3px 8px;
 }
 
 #control-panel {
@@ -15,59 +21,103 @@
     width: 150px;
     align-items:center;
     max-width: 100%;
-    height: 300px;
+    height: 350px;
     float: left;
-    padding-left: 20px;
+    padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 30px;
-    background-color: rgba(53, 111, 218, 0.7);
+    background-color: rgba(101, 233, 250, 0.7);
     margin-left:100px;
+    margin-top: 160px;
     border-radius: 8px;
 }
 
-h4 {
+h3 {
     text-align: center;
     opacity: 1;
+    font:17px 'Roboto Mono', monospace;
+    padding: 5px;
+    background-color: rgba(14, 119, 133, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 }
 
 #sixteen {
-    background: darkblue;
-    color:darkturquoise;
+    background: rgba(14, 119, 133, .8);
+    color:black;
     border:none;
     border-radius: 2px;
     width: 70px;
     height: auto;
     max-width: 100%;
     padding: 10px 0 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    margin: 5px;
+}
+
+#sixteen:hover {
+    background-color: rgba(14, 119, 133, .5);
+    color:rgb(4, 243, 247)
 }
 
 #thirtytwo {
-    background: darkblue;
-    color:darkturquoise;
+    background: rgba(14, 119, 133, .8);
+    color:black;
     border:none;
     border-radius: 2px;
     width: 70px;
     height: auto;
     max-width: 100%;
     padding: 10px 0 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    margin: 5px;
+}
+
+#thirtytwo:hover {
+    background-color: rgba(14, 119, 133, .5);
+    color:rgb(4, 243, 247)
 }
 
 #sixtyfour {
-    background: darkblue;
-    color:darkturquoise;
+    background: rgba(14, 119, 133, .8);
+    color:black;
     border:none;
     border-radius: 2px;
     width: 70px;
     height: auto;
     max-width: 100%;
     padding: 10px 0 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    margin: 5px;
 }
 
+#sixtyfour:hover {
+    background-color: rgba(14, 119, 133, .5);
+    color:rgb(4, 243, 247)
+}
+
+
 #picker {
-    border-radius: 50%;
+    -webkit-appearance: none;
+    width: 50px;
+    height: 50px;
     border: none;
     background: none;
 }
+
+#picker:hover {
+    cursor:pointer;
+}
+
+#picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.548) 0px 3px 8px;
+}
+
 
 :root {
     --grid-cols: 1;
@@ -85,8 +135,9 @@ h4 {
     border:1px solid black;
     margin: 0 0 0 460px;
     box-sizing: border-box;
-    background: white;
+    background: rgba(255, 255, 255, 0.788);
     border-color: goldenrod;
+    box-shadow: rgba(246, 250, 16, 0.671) 0px 3px 8px;
    
 }
 
@@ -97,8 +148,4 @@ h4 {
     min-width: 1fr;
     min-height: 1fr;
    
-}
-
-.cell:active {
-    background: black;
 }
